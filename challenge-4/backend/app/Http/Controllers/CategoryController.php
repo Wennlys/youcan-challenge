@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\Category\UpdateCategory;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
 use App\Models\Category;
@@ -51,9 +52,9 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateCategoryRequest $request, Category $category)
+    public function update($id, UpdateCategoryRequest $request, UpdateCategory $updateCategory)
     {
-        //
+        return $updateCategory->execute($id, $request);
     }
 
     /**

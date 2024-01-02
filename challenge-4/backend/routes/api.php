@@ -19,3 +19,6 @@ use Illuminate\Support\Facades\Route;
 //});
 Route::resource('/products', \App\Http\Controllers\ProductController::class);
 Route::put('/products/{id}', [\App\Http\Controllers\ProductController::class, 'update']);
+
+Route::resource('/categories', \App\Http\Controllers\CategoryController::class);
+Route::put('/categories/{id}', [\App\Http\Controllers\CategoryController::class, 'update']);
