@@ -7,9 +7,13 @@ use App\Models\Product;
 
 class UpdateProduct
 {
+    public function __construct(private Product $product)
+    {
+    }
+
     public function execute(string $id, UpdateProductRequest $request)
     {
-        $product = Product::find($id);
+        $product = $this->product->find($id);
         $name = $request->get('name');
         $description = $request->get('description');
         $price = $request->get('price');
