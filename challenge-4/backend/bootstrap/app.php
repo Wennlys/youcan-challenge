@@ -41,6 +41,8 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
+$app->bind(\Src\Product\Domain\ProductRepository::class, \Src\Product\Infrastructure\EloquentProductRepository::class);
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application
