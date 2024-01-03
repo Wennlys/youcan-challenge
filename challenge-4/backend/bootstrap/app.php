@@ -42,6 +42,7 @@ $app->singleton(
 );
 
 $app->bind(\Src\Product\Domain\ProductRepository::class, \Src\Product\Infrastructure\EloquentProductRepository::class);
+$app->bind(\Src\Category\Domain\CategoryRepository::class, \Src\Category\Infrastructure\EloquentCategoryRepository::class);
 
 /*
 |--------------------------------------------------------------------------
